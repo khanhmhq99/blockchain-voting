@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { ArrowRight, LockKeyhole, ShieldCheck, Workflow } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export default function HomePage() {
+  return <div className="space-y-16 py-10"><section className="mx-auto max-w-4xl text-center"><div className="mb-4 inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">Master&apos;s thesis research prototype</div><h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Auditable elections, built on verifiable rules.</h1><p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">A maintainable MVP combining Supabase identity workflows with blockchain-enforced eligibility, one-voter-one-vote, and public results.</p><div className="mt-8 flex justify-center gap-3"><Button size="lg" asChild><Link href="/elections">Browse elections <ArrowRight className="size-4" /></Link></Button><Button size="lg" variant="outline" asChild><Link href="/register">Create account</Link></Button></div></section><section className="grid gap-5 md:grid-cols-3">{[[ShieldCheck,"Authoritative rules","Eligibility and single-vote constraints are enforced by the smart contract."],[LockKeyhole,"Privacy-aware","Personal data stays off-chain; the documented MVP limitations guide the ZKP phase."],[Workflow,"Phase-ready","Transaction strategies and chain configuration are replaceable research boundaries."]].map(([Icon,title,body]) => <Card key={String(title)}><CardHeader><Icon className="size-7 text-blue-700" /><CardTitle>{title as string}</CardTitle></CardHeader><CardContent className="text-sm text-slate-600">{body as string}</CardContent></Card>)}</section></div>;
+}

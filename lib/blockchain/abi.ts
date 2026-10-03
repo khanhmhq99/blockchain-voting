@@ -1,0 +1,17 @@
+export const votingSystemAbi = [
+  "function createElection(uint64 startTime,uint64 endTime) returns (uint256)",
+  "function addCandidate(uint256 electionId,string metadata) returns (uint256)",
+  "function approveVoter(uint256 electionId,address voter)",
+  "function castVote(uint256 electionId,uint256 candidateId)",
+  "function closeElection(uint256 electionId)",
+  "function getElection(uint256 electionId) view returns ((address organizer,uint64 startTime,uint64 endTime,bool closed,uint32 candidateCount,bool exists))",
+  "function getCandidates(uint256 electionId) view returns ((string metadata,uint256 voteCount)[])",
+  "function getResults(uint256 electionId) view returns (uint256[])",
+  "function isApprovedVoter(uint256 electionId,address voter) view returns (bool)",
+  "function hasVoted(uint256 electionId,address voter) view returns (bool)",
+  "event ElectionCreated(uint256 indexed electionId,address indexed organizer,uint64 startTime,uint64 endTime)",
+  "event CandidateAdded(uint256 indexed electionId,uint256 indexed candidateId,string metadata)",
+  "event VoterApproved(uint256 indexed electionId,address indexed voter)",
+  "event VoteCast(uint256 indexed electionId,uint256 indexed candidateId)",
+  "event ElectionClosed(uint256 indexed electionId)",
+] as const;

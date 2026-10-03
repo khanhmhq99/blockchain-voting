@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.env
+.env.local
+coverage/
+blockchain/artifacts/
+blockchain/cache/
+blockchain/typechain-types/
+blockchain/deployments/*.local.json
+*.tsbuildinfo
+.DS_Store
